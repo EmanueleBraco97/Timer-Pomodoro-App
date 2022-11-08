@@ -2,11 +2,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay, faCircle, faRefresh } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import "./Timer.css";
-import pomodoroFoto from "../img/best-pomodoro-timer-apps.jpg";
+import pomodoroFoto from "../img/pomodoro.png";
 import ChangeSession from "./ChangeSession";
 import ChangeBreak from "./ChangeBreak";
 
+
 const Timer = () => {
+  
   let initialState = {
     defaultSessionTime: 25,
     defaultBreakTime: 5,
@@ -27,6 +29,7 @@ const Timer = () => {
 
   const [isReset, setIsReset] = useState(false)
 
+  //funzione di callback per passare dati di un componente figlio(changeSession) al componente padre//
   const handleChangeSession = (childData) => {
     if(config.isPaused === true) {
       setMinutesSession(childData)
@@ -35,6 +38,7 @@ const Timer = () => {
     }
   }
 
+  //funzione di callback per passare dati di un componente figlio(changeBreak) al componente padre//
   const handleChangeBreak = (childData) => {
     if(config.isPaused === true) {
       setMinutesBreak(childData)
@@ -122,16 +126,17 @@ const Timer = () => {
     setSecondsBreak(0);
     setIsReset(true)
   };
+  
 
   return (
-    <main className="pomodoro-container">
-      <section className="pomodoro-top">
-        <img src={pomodoroFoto} alt="PomodoroFoto" />
-        <h1 style={{ color: "white" }}>Pomodoro App</h1>
-      </section>
+    <div className="container">
+      <header className="header">
+        <img src={pomodoroFoto} alt='pomodoroFoto'/>
+        <h1 style={{ color: "white" }}>Pomodoro Timer App</h1>
+      </header>
 
-      <section className="pomodoro-center">
-        <div className="pomodoro-center-structure">
+      <main className="main">
+        <section className="section-center-structure">
           <div className="message">
             {config.mode === "Session" ? <div>Session</div> : <div>Break</div>}
           </div>
@@ -154,14 +159,14 @@ const Timer = () => {
               <FontAwesomeIcon icon={faRefresh} />
             </button>
           </section>
-        </div>
-      </section>
+        </section>
+      </main>
 
-      <section className="pomodoro-bottom">
+      <footer className="footer">
         <ChangeSession isReset={isReset} handleChangeSession={handleChangeSession} valueSession={config.defaultSessionTime}/>
         <ChangeBreak isReset={isReset} handleChangeBreak={handleChangeBreak} valueBreak ={config.defaultBreakTime}/>
-      </section>
-    </main>
+      </footer>
+    </div>
   );
 };
 

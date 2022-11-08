@@ -1,8 +1,16 @@
-.pomodoro-bottom {
+.footer {
     display: flex;
     justify-content: space-around;
     height: 25%;
     color: white;
+}
+
+.pomodoro-bottom-left,
+.pomodoro-bottom-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .session-left {

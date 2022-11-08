@@ -25,9 +25,9 @@ const ChangeBreak = ({valueBreak, handleChangeBreak, isReset }) => {
 
     
   return (
-    <div className="pomodoro-bottom-left">
+    <div className="pomodoro-bottom-right">
       <div className="text-top">
-        <h2>Break</h2>
+        <h2>Break Time</h2>
       </div>
       <div className="edit-bottom">
         <button onClick={decrement} className="button-bottom">-</button>

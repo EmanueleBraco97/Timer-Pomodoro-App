@@ -26,7 +26,7 @@ const ChangeSession = ({valueSession, handleChangeSession, isReset}) => {
   return (
     <div className="pomodoro-bottom-left">
       <div className="text-top">
-        <h2>Session</h2>
+        <h2>Work Session</h2>
       </div>
       <div className="edit-bottom">
         <button onClick={decrement} className="button-bottom">-</button>
