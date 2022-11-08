@@ -1,0 +1,25 @@
+.pomodoro-bottom {
+    display: flex;
+    justify-content: space-around;
+    height: 25%;
+    color: white;
+}
+
+.session-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-bottom {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5em;
+}
+
+.button-bottom {
+    border: none;
+    background: none;
+    color: white;
+    font-size: 30px;
+}
